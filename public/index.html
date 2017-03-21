@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no"/>
+    <meta charset="utf-8">
+    <title>LiarsDice</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<h1>Liars dice</h1>
+
+<form action="javascript:void(0)">
+    <label for="name">Name: </label>
+    <input type="text" id="name" required autofocus />
+</form>
+
+<button onclick="rollDice()"> Roll Dice </button>
+<button onclick="startGame()"> Start Game </button>
+<button onclick="liftCup()"> lift </button>
+
+<form action="javascript:void(0)">
+    <label for="claim">Claim: </label>
+    <input type="text" id="claim" required autofocus />
+</form>
+
+<div class="messages"></div>
+<form action="javascript:void(0)">
+    <label for="message">&gt;</label>
+    <input type="text" id="message" required autofocus />
+</form>
+<script src="js/socket.io.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
