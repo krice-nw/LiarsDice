@@ -41,6 +41,13 @@ socket.on("round", function(status) {
     if (status === "start") {
         // enable the guess action ... if your turn
         printMessage("round -> start");
+    } else if (status == "lost") {
+        printMessage("You just lost a die");
+        if (player.dice.length > 1) {
+            player.dice.pop();
+        } else {
+            player.dice = [];
+        }
     }
 })
 
