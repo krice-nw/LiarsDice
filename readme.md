@@ -48,5 +48,5 @@ How much should the server know ....
 
 
 
-Right now I send player begin before settin the round to start .... should add the player to begin with round start 
+Right now I send player begin before setting the round to start .... should add the player to begin with round start 
 Means I need to know the correct play order (or start person) at that time.
