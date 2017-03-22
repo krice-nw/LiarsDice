@@ -15,7 +15,14 @@ var lastGuess = {playerIndex: -1, count: 0, die:0}; // could rename guess to cal
 //var totalDice = 0;
 
 function getRolling(socket) {
+    // iterate over the playters and clear their dice
+    players.forEach(function(eachPlayer) {
+        eachPlayer.player.dice = [0];
+    });
+
+    // set the flag to rolling so we can track when all have rolled
     playersRolling = true;  
+
     // tell the players to roll
     socket.broadcast.emit("rolling", "start round");
     socket.emit("rolling", "start round");
@@ -39,15 +46,19 @@ function lastGuessValid() {
     var guessIsValid = false;
     players.forEach(function(eachPlayer) {
         eachPlayer.player.dice.forEach(function(die) {
-            if (die === lastGuess.die) {
+            if (die == lastGuess.die) {
                 dieCount++;
+                console.log("Increment die count: %j", dieCount);
             };
         });
     });
     console.log("Die count for %j is: %j", lastGuess.die, dieCount);
-    if (dieCount >= lastGuess.count) {
+    console.log("lastGuess count: %j", lastGuess.count);
+    if (dieCount >= parseInt(lastGuess.count)) {
         guessIsValid = true;
+        console.log("Current guess is valid");
     };
+    return guessIsValid;
 };
 
 app.use(express.static("./public"));
@@ -245,7 +256,7 @@ io.on("connection", function(socket) {
         // need to check if a player is removed and if so if we have a winner
         // actually the client will handle this based on the round:lost emit  
         
-        // then kick off the rolling for the next round
+        // then kick off the rolling for the next round which should clear current player dice
         getRolling(socket);
     });
 

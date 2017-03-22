@@ -42,6 +42,7 @@ socket.on("roll", function(player) {
     players.push(player);
     // show the player and place holder for each die n dice
     printMessage(JSON.stringify(player));
+    showPlayer(player);
 })
 
 // on round start
