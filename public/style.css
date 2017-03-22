@@ -44,3 +44,61 @@ form {
     display: -ms-flexbox;
     display: flex;
 }
+
+div.player_display {
+    background-color: gray;
+    color: #00F;
+    font-family: verdana;
+/**/
+    display: inline-block;
+    width: 220px;
+    height: 400px;
+    margin: 20px;
+    border: 3px solid #73AD21;  
+/**/
+    position: absolute;
+    right: 0px;
+}
+
+div.player_heading {
+    text-align: center;
+}
+
+div.player_box {
+    /*
+    border: 1px;
+    */
+    color: mediumvioletred;
+}
+
+div.dice_box {
+    /*
+    color: black;
+    border-color: black;
+    border: 1px;
+    */
+    height: 45px;
+    width: 100%;
+    margin-left: 2px;
+}
+
+div.hidden_die {
+    
+    color: black;
+    fill: rebeccapurple;
+    border-color: black;
+    
+    border: 1px;
+    height: 40px;
+    width: 40px;
+    float: left;
+    padding: 2px;
+}
+
+.floating-box {
+    display: inline-block;
+    width: 150px;
+    height: 600px;
+    margin: 10px;
+    border: 3px solid #73AD21;  
+}
