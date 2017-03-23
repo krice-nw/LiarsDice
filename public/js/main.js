@@ -8,6 +8,8 @@ var players = [];
 // test 
 var testPlayer = {name: "Freddy", dice: [1,2,1,3,5], valid: false};
 showPlayer(testPlayer);
+testPlayer = {name: "Michelle", dice: [3,2,3,4,1], valid: false};
+showPlayer(testPlayer);
 */
 
 socket.on("disconnect", function() {
@@ -68,7 +70,6 @@ socket.on("claim", function(call) {
     printMessage("claim: %j", call);
 })
 
-
 document.forms[0].onsubmit = function () {
     player.name = document.getElementById("name").value;
     player.dice = [0,0,0,0,0];
@@ -92,6 +93,18 @@ document.forms[2].onsubmit = function () {
     input.value = '';
 };
 
+/*
+// test form
+document.forms[2].onsubmit = function () {
+    var input = document.getElementById("message");
+    printMessage(input.value);
+    input.value = '';
+};
+*/
+
+
+
+
 function setTitle(title) {
     document.querySelector("h1").innerHTML = title;
 }
@@ -99,7 +112,9 @@ function setTitle(title) {
 function printMessage(message) {
     var p = document.createElement("p");
     p.innerText = message;
-    document.querySelector("div.messages").appendChild(p);
+    //document.querySelector("div.messages").appendChild(p);
+    var messages = document.querySelector("div.messages");
+    messages.insertBefore(p, messages.childNodes[0]);
 }
 
 

@@ -23,7 +23,13 @@ Only connected players will be in the game but any connected client can observe 
 
 
 TODO:
-Need to differentiate players from other conncted clients
+Identify players so I can updae their dice even if named the same. Need a unique identifier. Mayber for all connected an set a plyer flag?
+
+Try to stringify all messages on the client sent to the server and parseJSON on the client to get JSON fro, server responses.
+
+What would I need to do on the server side in node ... the same thing?
+
+Need to differentiate players from other connected clients
     Maybe Players[socket].player?
     so iterate over all clients nd identify if they are players?
     or only manage those that add themselves as players with a name?
