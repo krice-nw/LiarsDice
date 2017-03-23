@@ -23,6 +23,8 @@ Only connected players will be in the game but any connected client can observe 
 
 
 TODO:
+Player display needs to clear dice and re-use player spot (not add each roll update as a new player)
+
 Need to differentiate players from other conncted clients
     Maybe Players[socket].player?
     so iterate over all clients nd identify if they are players?
