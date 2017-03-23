@@ -34,7 +34,15 @@ label {
     font-size: 1.5em;
 }
 
+div.message_container {
+    height: 200px;
+    width: 60%;
+    border: 2px solid gray; 
+}
+
 div.messages {
+    height: 180px;
+    overflow: auto;
     margin-left: 1em;
 }
 
@@ -50,7 +58,9 @@ div.player_display {
     color: #00F;
     font-family: verdana;
 /**/
+/*
     display: inline-block;
+*/
     width: 220px;
     height: 400px;
     margin: 20px;
@@ -68,33 +78,33 @@ div.player_box {
     /*
     border: 1px;
     */
-    color: mediumvioletred;
+    color: darkolivegreen;
+    margin-left: 5px;
 }
 
 div.dice_box {
-    /*
-    color: black;
-    border-color: black;
-    border: 1px;
-    */
-    height: 45px;
+    height: 44px;
     width: 100%;
-    margin-left: 2px;
+    /*
+    margin-left: 4px;
+    */
 }
 
 div.hidden_die {
-    
     color: black;
-    fill: rebeccapurple;
-    border-color: black;
-    
-    border: 1px;
-    height: 40px;
-    width: 40px;
+    background-color: firebrick;
+    border: solid 1px orangered;
+    height: 36px;
+    width: 36px;
     float: left;
-    padding: 2px;
-}
+    margin: 2px;
 
+    align-content: center;
+    line-height: 36px;
+    text-align: center;
+    
+}
+/*
 .floating-box {
     display: inline-block;
     width: 150px;
@@ -102,3 +112,4 @@ div.hidden_die {
     margin: 10px;
     border: 3px solid #73AD21;  
 }
+*/
